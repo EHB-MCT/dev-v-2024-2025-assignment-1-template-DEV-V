@@ -1,6 +1,5 @@
-# Your project name
-E-mail Automatisering 
-
+# E-mail Automatisering
+ 
 # Description
  Stuur automatische e-mails op basis van een schema of gebeurtenissen
 
