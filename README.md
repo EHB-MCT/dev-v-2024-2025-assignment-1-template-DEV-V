@@ -1,15 +1,38 @@
 # Your project name
-A short description of your project. 
+E-mail Automatisering 
 
-Next, read this example and adapt it to your project.
-
-If you want to add more sections, please do so after the existing ones (avoid burying your sources under a lot of text!).
-
-Live link: [website.be](website.be) (optional)
+# Description
+ Stuur automatische e-mails op basis van een schema of gebeurtenissen
 
 ## Up & running (optional)
-- This should contain step by step instructions to run your project
+1. Installatie van Vereiste Bibliotheken:
+
+Python biedt de standaardbibliotheek smtplib voor het verzenden van e-mails via SMTP.
+Je kunt ook de module ssl gebruiken om een beveiligde verbinding met de SMTP-server te maken.
+Gebruik schedule als je e-mails op vaste tijden wilt versturen.
+
+2.SMTP Instellen:
+
+Voor het versturen van e-mails heb je een SMTP-server nodig. De meeste e-mailproviders (zoals Gmail) bieden een SMTP-service.
+Zorg ervoor dat je de juiste SMTP-server, poort, en authenticatiegegevens hebt.
+
+3.Beveiliging:
+
+Verwerk gevoelige gegevens zoals wachtwoorden veilig. Dit kan bijvoorbeeld met behulp van omgevingsvariabelen of een configuratiebestand dat niet in je versiebeheersysteem wordt opgenomen.
+
+4.Stringmanipulatie en E-mail Content:
+
+De content van de e-mail kan dynamisch worden gegenereerd door strings te manipuleren. Gebruik placeholders of templates voor variabele gegevens zoals namen of rapportgegevens.
 - Login information is mentioned here if applicable.
+
+5.Error Handling:
+
+Voeg foutafhandeling toe om problemen met de SMTP-verbinding of ongeldige e-mailadressen op te vangen.
+
+6.Logging:
+
+Voeg logging toe om het succes of falen van e-mailverzendingen bij te houden.
+
 
 ## Sources 
 
