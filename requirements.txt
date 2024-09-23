@@ -1,0 +1,1 @@
+en lijst van alle Python-bibliotheken die het project nodig heeft.
