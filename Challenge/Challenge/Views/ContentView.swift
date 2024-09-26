@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var model: ObjectViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView{
+            VStack{
+                if model.object.isEmpty {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                    Text("Loading...")
+                } else {
+                    List(model.object) {
+                        object in
+                        NavigationLink(destination: ObjectDetailView(), label: {
+                            Text(object.name)
+                        })
+                    }
+                }
+            }
+            
+            .navigationTitle("Challenge!")
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(model: ObjectViewModel())
 }

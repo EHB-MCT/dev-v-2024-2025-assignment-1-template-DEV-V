@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ChallengeApp: App {
+    
+    @StateObject var model = ObjectViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: model)
         }
     }
 }
