@@ -13,7 +13,7 @@ enum HTTPError: Error {
 
 final class APIController {
     func pokemon() async throws -> [Pokemon] {
-        let url = URL(string: "https://pokeapi.co/api/v2/pokemon")!
+        let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=151")!
         
         let (data, response) = try await URLSession.shared.data(from: url)
                 
