@@ -1,13 +1,13 @@
 //
-//  Challenge_1UITestsLaunchTests.swift
-//  Challenge 1UITests
+//  ChallengeUITestsLaunchTests.swift
+//  ChallengeUITests
 //
 //  Created by Guillaume Dochy on 26/09/2024.
 //
 
 import XCTest
 
-final class Challenge_1UITestsLaunchTests: XCTestCase {
+final class ChallengeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
