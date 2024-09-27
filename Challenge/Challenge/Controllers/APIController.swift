@@ -34,4 +34,7 @@ final class APIController {
             throw HTTPError.badResponse
         }
     }
+    func detailedPokemon() {
+    
+    }
 }

@@ -28,7 +28,7 @@ struct ContentView: View {
                 }
             }
             
-            .navigationTitle("Challenge!")
+            .navigationTitle("Challenge")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
