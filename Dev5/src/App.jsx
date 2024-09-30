@@ -3,12 +3,18 @@ import { TaskProvider } from './context/TaskContext';
 import Header from './components/Header';
 import TodoPage from './pages/TodoPage';
 
+/**
+ * App component acts as the root of the application.
+ * It wraps the entire application with the TaskProvider for global state management.
+ */
 const App = () => {
   return (
     <TaskProvider>
-      <div>
-        <Header />
-        <TodoPage />
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-blue-100 p-4">
+        <div className="bg-white shadow-lg rounded-lg w-full max-w-xl p-8">
+          <Header />
+          <TodoPage />
+        </div>
       </div>
     </TaskProvider>
   );

@@ -1,13 +1,12 @@
 import React from 'react';
 
 /**
- * Header component for the app.
- * @returns {JSX.Element} A header element.
+ * Header component renders the title of the Todo List application.
  */
 const Header = () => {
   return (
-    <header>
-      <h1>Todo App</h1>
+    <header className="text-center mb-6">
+      <h1 className="text-3xl font-semibold text-gray-800">Todo List</h1>
     </header>
   );
 };
