@@ -2,6 +2,7 @@ import React from 'react';
 import { TaskProvider } from './context/TaskContext';
 import Header from './components/Header';
 import TodoPage from './pages/TodoPage';
+import './styles/app.css';
 
 /**
  * App component acts as the root of the application.
