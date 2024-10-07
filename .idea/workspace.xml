@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="595377ee-2059-4054-a3bd-125284bf8da7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/starter-file-Backend/public/favicon.ico" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1728238527925</updated>
       <workItem from="1728238529745" duration="312000" />
-      <workItem from="1728238852777" duration="2322000" />
+      <workItem from="1728238852777" duration="2728000" />
+      <workItem from="1728287539272" duration="624000" />
     </task>
     <servers />
   </component>
