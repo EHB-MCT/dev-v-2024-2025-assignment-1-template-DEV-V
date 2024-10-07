@@ -1,5 +1,4 @@
-// src/App.jsx
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchWallpapers } from "./api";
 
 function App() {

@@ -5,11 +5,10 @@ Next, read this example and adapt it to your project.
 
 If you want to add more sections, please do so after the existing ones (avoid burying your sources under a lot of text!).
 
-Live link: [website.be](website.be) (optional)
+Live link: [website.be](website.be) 
 
 ## Up & running (optional)
-- This should contain step by step instructions to run your project
-- Login information is mentioned here if applicable.
+- Run "npm run dev" in the webshop-frontend file and in the backend file
 
 ## Sources 
 
