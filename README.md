@@ -8,7 +8,9 @@ If you want to add more sections, please do so after the existing ones (avoid bu
 Live link: [website.be](website.be) 
 
 ## Up & running (optional)
-- Run "npm run dev" in the webshop-frontend file and in the backend file
+- Run "npm install" in the webshop-frontend file and in the backend file
+- Run "npm run dev" in the webshop-frontend file
+- Run "node app.js" in the backend file
 
 ## Sources 
 
