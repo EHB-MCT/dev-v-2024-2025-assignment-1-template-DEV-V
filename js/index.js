@@ -1,6 +1,6 @@
 "use strict";
 
-import Artwork from "./Artwork.js";
+import Artwork from "../classes/Artwork.js";
 
 let artworks = [];
 
