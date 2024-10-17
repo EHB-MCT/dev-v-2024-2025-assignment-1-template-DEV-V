@@ -1,22 +1,37 @@
-# Your project name
-A short description of your project. 
+# Art museum of chicago
 
-Next, read this example and adapt it to your project.
+An overview of all the art in the chicago museum.
 
-If you want to add more sections, please do so after the existing ones (avoid burying your sources under a lot of text!).
+## Conventions
+- Naming
+    Images: lowercase, seperated with underscores
+    File names: camelCase
+    Classes: nouns, starting with a capital
+    Functions: camelCase
+    Variables: camelCase
 
-Live link: [website.be](website.be) (optional)
+- Placing
+    Constants: top of the file
 
-## Up & running (optional)
-- This should contain step by step instructions to run your project
-- Login information is mentioned here if applicable.
+- Formatting
+    Before and after a + , - , = , => , < , > a space
+
+    Functions, foreach, and other things that use curly brackets are formatted like this:
+    fun {
+
+    } 
+
+    line length < 80
+
+- Commits
+    formatted in the conventional method (https://www.conventionalcommits.org/en/v1.0.0/)
+
+    
 
 ## Sources 
 
 Given are some examples, delete and replace with your own.
 
-- [Multi auth in Laravel](https://stackoverflow.com/questions/50514738/multi-auth-use-one-page-login-laravel) used in http > controller > LoginController.php (line 18-67)
-- [Audio from ChatGPT](https://chatgpt.com/c/66dae37e-6da8-8001-99ab-245ad328416a) used in resources > music
-- [Chatgpt.com](https://chatgpt.com) ⚠️ this is an invalid example, because it links to a homepage instead of a specific page or issue
-- Generate a ChatGPT share link: options (three dots) > share.
-- If your lecturer still sees these default examples, you're in trouble
+- [API](https://api.artic.edu/api/v1/artworks) used in js > index.js
+- [Conventions](https://www.w3schools.com/js/js_conventions.asp)
+- [Chatgpt.com](https://chatgpt.com/share/67110f21-ddd8-800d-a4b1-2c59ac5b2c8d) used in js > index.js
