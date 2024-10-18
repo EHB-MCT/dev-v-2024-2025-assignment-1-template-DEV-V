@@ -9,6 +9,7 @@ An overview of all the art in the chicago museum.
     Classes: nouns, starting with a capital
     Functions: camelCase
     Variables: camelCase
+    Branches: lowercase, seperated with -
 
 - Placing
     Constants: top of the file
