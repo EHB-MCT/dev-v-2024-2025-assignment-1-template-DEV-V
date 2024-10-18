@@ -116,14 +116,3 @@ def divide_numbers(num1: float, num2: float) -> float:
         print("Error: Kan niet delen door nul.")
         return 0.0
     return result
-
-
-    project/
-├── src/
-│   └── main.py
-├── tests/
-│   └── test_main.py
-├── README.md
-├── requirements.txt
-├── .gitignore
-└── LICENSE
