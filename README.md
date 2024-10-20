@@ -3,33 +3,40 @@
 An overview of all the art in the chicago museum.
 
 ## Conventions
+
 - Naming
-    Images: lowercase, seperated with underscores
-    File names: camelCase
-    Classes: nouns, starting with a capital
-    Functions: camelCase
-    Variables: camelCase
-    Branches: lowercase, seperated with -
+  Images: lowercase, seperated with underscores
+  File names: camelCase
+  Classes: nouns, starting with a capital
+  Functions: camelCase
+  Variables: camelCase
+  Branches: lowercase, seperated with -
 
 - Placing
-    Constants: top of the file
+  Constants: top of the file
 
 - Formatting
-    Before and after a + , - , = , => , < , > a space
+  Before and after a + , - , = , => , < , > a space
 
-    Functions, foreach, and other things that use curly brackets are formatted like this:
-    fun() {
+  Functions, foreach, and other things that use curly brackets are formatted like this:
+  fun() {
 
-    } 
+  }
 
-    line length < 80
+  line length < 80
 
 - Commits
-    formatted in the conventional method (https://www.conventionalcommits.org/en/v1.0.0/)
+  formatted in the conventional method (https://www.conventionalcommits.org/en/v1.0.0/)
 
-    
+## Files breakdown
 
-## Sources 
+- CSS
+  master.css: css added to all pages for consistency
+  reset.css: removes all css defaulted by browser
+  media.css: mediaqueries
+  index.css: page specific
+
+## Sources
 
 Given are some examples, delete and replace with your own.
 
