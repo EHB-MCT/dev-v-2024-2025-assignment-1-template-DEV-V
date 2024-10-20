@@ -18,7 +18,7 @@ An overview of all the art in the chicago museum.
     Before and after a + , - , = , => , < , > a space
 
     Functions, foreach, and other things that use curly brackets are formatted like this:
-    fun {
+    fun() {
 
     } 
 

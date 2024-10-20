@@ -1,5 +1,8 @@
 "use strict";
 
+/**
+ * 
+ */
 export default class Artwork {
     constructor(title, dateDisplay, placeOfOrigin, genre, artist){
         this.title = title;
