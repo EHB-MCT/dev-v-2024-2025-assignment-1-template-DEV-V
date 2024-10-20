@@ -5,10 +5,10 @@ import Artwork from "../classes/Artwork.js";
 let artworks = [];
 
 /**
- * desciµ
+ * description: api fetch
  *
- * params:
- * returns:
+ * params: title, display dates, place of origin, department title (genre), artist
+ * returns: get a return of data from the fetch
  */
 function init() {
 	fetch("https://api.artic.edu/api/v1/artworks")
