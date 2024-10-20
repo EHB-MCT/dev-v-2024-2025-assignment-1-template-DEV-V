@@ -26,6 +26,14 @@ function init() {
 		});
 }
 
+function sort() {
+	console.log("sorting");
+}
+
+function filter() {
+	console.log("filtering");
+}
+
 function render() {
 	document.getElementById("gallery").innerHTML = "";
 	artworks.forEach((artwork) => {
