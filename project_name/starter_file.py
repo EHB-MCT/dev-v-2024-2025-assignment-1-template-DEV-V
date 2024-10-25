@@ -1,12 +1,3 @@
-#Author: Scorobogatskii Stas, Van Bergen Tuur 
-
-"""
-Bronnen: 
-https://docs.python.org/3.14/
-https://packaging.python.org/en/latest/tutorials/packaging-projects/
-
-"""
-
 # Import statements - Importeer altijd modules bovenaan de file
 import os
 import sys
