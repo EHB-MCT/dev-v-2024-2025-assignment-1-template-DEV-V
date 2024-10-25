@@ -1,5 +1,5 @@
 const express = require("express");
-const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4, validate: uuidValidate } = require("uuid");
 const bcrypt = require("bcrypt");
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
@@ -14,6 +14,20 @@ const wallpapersCollection = "Wallpapers";
 
 app.use(cors());
 app.use(express.json());
+app.use((req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+        const sessionToken = authHeader.substring(7);
+        const userSession = Object.entries(activeSessions).find(([_, session]) => session.token === sessionToken);
+        if (userSession) {
+            req.user = {
+                id: userSession[0],
+                ...userSession[1]
+            };
+        }
+    }
+    next();
+});
 
 let db;
 const client = new MongoClient(url);
@@ -29,49 +43,74 @@ client
 		process.exit(1);
 	});	
 
+let activeSessions = {};
+
+app.post("/logout", async (req, res) => {
+    if (!req.user) {
+        return res.status(401).send({
+            status: "Auth Error",
+            message: "You must be logged in to logout"
+        });
+    }
+
+    delete activeSessions[req.user.id];
+
+    res.status(200).send({
+        status: "Logged Out",
+        message: "You have successfully logged out"
+    });
+});
+
 app.post("/login", async (req, res) => {
-	if (!req.body.email || !req.body.password) {
-		return res.status(400).send({
-			status: "Bad Request",
-			message: "Some fields are missing",
-		});
-	}
+    if (!req.body.email || !req.body.password) {
+        return res.status(400).send({
+            status: "Bad Request",
+            message: "Some fields are missing",
+        });
+    }
 
-	try {
-		const collection = db.collection(usersCollection);
-		const user = await collection.findOne({ email: req.body.email });
+    try {
+        const collection = db.collection(usersCollection);
+        const user = await collection.findOne({ email: req.body.email });
 
-		if (user) {
-			const validPassword = await bcrypt.compare(req.body.password, user.password);
-			if (validPassword) {
-				res.status(200).send({
-					status: "Auth Success",
-					message: "You are logged in!",
-					data: {
-						username: user.username,
-						email: user.email,
-						uuid: user.uuid,
-					},
-				});
-			} else {
-				res.status(401).send({
-					status: "Auth Error",
-					message: "Password incorrect",
-				});
-			}
-		} else {
-			res.status(401).send({
-				status: "Auth Error",
-				message: "No user with this email has been found!",
-			});
-		}
-	} catch (error) {
-		console.error(error);
-		res.status(500).send({
-			error: "Something went wrong!",
-			value: error.message || error,
-		});
-	}
+        if (user) {
+            const validPassword = await bcrypt.compare(req.body.password, user.password);
+            if (validPassword) {
+                const sessionToken = uuidv4();
+                activeSessions[user.id] = { 
+                    email: user.email,
+                    token: sessionToken 
+                };
+
+                res.status(200).send({
+                    status: "Auth Success",
+                    message: "You are logged in!",
+                    data: {
+                        username: user.username,
+                        email: user.email,
+                        uuid: user.uuid,
+                        token: sessionToken
+                    },
+                });
+            } else {
+                res.status(401).send({
+                    status: "Auth Error",
+                    message: "Password incorrect",
+                });
+            }
+        } else {
+            res.status(401).send({
+                status: "Auth Error",
+                message: "No user with this email has been found!",
+            });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({
+            error: "Something went wrong!",
+            value: error.message || error,
+        });
+    }
 });
 
 app.post("/register", async (req, res) => {
@@ -199,7 +238,6 @@ app.post("/verifyID", async (req, res) => {
         });
     }
 });
-
 
 app.get("/Wallpapers", async (req, res) => {
 	try {
