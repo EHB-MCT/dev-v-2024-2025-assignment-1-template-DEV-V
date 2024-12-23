@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TaskItem from './TaskItem';
 
 /**
- * TaskList component renders a list of tasks.
- * @param {object} props - The tasks and handlers for toggling and removing tasks.
- * @returns {JSX.Element} A list of task items.
+ * TaskList component renders a list of tasks using the TaskItem component.
  */
 const TaskList = ({ tasks, toggleComplete, removeTask }) => {
   return (
-    <ul>
+    <ul className="space-y-4">
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
@@ -19,6 +18,19 @@ const TaskList = ({ tasks, toggleComplete, removeTask }) => {
       ))}
     </ul>
   );
+};
+
+// Prop Validation
+TaskList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  removeTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;

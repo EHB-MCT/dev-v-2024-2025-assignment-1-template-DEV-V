@@ -1,31 +1,27 @@
 import React, { createContext, useState } from 'react';
 
 /**
- * TaskContext provides a global state to manage the list of tasks.
- * It is consumed by any component that needs access to the task list or task-related actions.
+ * TaskContext provides global state for task management.
  */
 export const TaskContext = createContext();
 
 /**
- * TaskProvider wraps the children components with TaskContext, providing
- * the ability to add and remove tasks from the global state.
- *
- * @param {object} props - The children components that need access to the task state.
+ * TaskProvider wraps components with TaskContext, managing task-related state and actions.
  */
 export const TaskProvider = ({ children }) => {
-  const [tasks, setTasks] = useState([]); // State to manage the list of tasks
+  const [tasks, setTasks] = useState([]); // State to manage tasks
 
   /**
    * Adds a new task to the task list.
    *
-   * @param {object} task - The task object containing the task ID and text.
+   * @param {object} task - The task to be added (id, text, completed).
    */
   const addTask = (task) => {
     setTasks((prevTasks) => [...prevTasks, task]);
   };
 
   /**
-   * Removes a task from the task list based on its ID.
+   * Removes a task from the task list by its ID.
    *
    * @param {number} id - The ID of the task to be removed.
    */
@@ -33,8 +29,21 @@ export const TaskProvider = ({ children }) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
   };
 
+  /**
+   * Toggles the completed state of a task.
+   *
+   * @param {number} id - The ID of the task to toggle.
+   */
+  const toggleComplete = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, removeTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, removeTask, toggleComplete }}>
       {children}
     </TaskContext.Provider>
   );
