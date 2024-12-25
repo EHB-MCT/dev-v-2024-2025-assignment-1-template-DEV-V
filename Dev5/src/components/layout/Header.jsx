@@ -6,7 +6,7 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="text-center mb-6">
-      <h1 className="text-3xl font-semibold text-gray-800">Todo List</h1>
+      <h1 className="text-3xl font-semibold text-gray-800">My Todo</h1>
     </header>
   );
 };
